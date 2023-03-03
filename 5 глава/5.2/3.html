@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+//let number = prompt( "Number, plz" );
+
+let number = prompt("Number plz");
+
+readNumber( number );
+
+function readNumber( number ) {
+	while ( !isFinite( number ) ) {
+	number = prompt( "Only number, plz" );
+	}
+	
+	if ( number === null || number === "" ) return null;
+	
+	return +number;
+}
+
+alert(number);
+
+</script>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+alert( randomInteger(1, 5) );
+alert( randomInteger(1, 5) );
+alert( randomInteger(1, 5) );
+
+randomInteger(min, max) {
+	let number;
+	number = min + Math.random() * (max - min);
+	return number.toFixed(0);
+}
+
+</script>

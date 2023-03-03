@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+};
+let sum = 0;
+if( isNotEmpty(salaries) ) {
+	for ( let key in salaries) {
+		sum += salaries[key];
+	}
+}
+
+alert(sum);
+
+function isNotEmpty () {
+	let numberOfProperties = 0;
+	
+	for ( let key in salaries ) {
+		numberOfProperties++;
+	}
+	
+	if( numberOfProperties > 0 ) {
+		return true;
+	} else 
+		return false;
+	
+}
+
+</script>

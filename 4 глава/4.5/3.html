@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+function Accumulator(startingValue) {
+	this.value = startingValue,
+	
+	this.read = function() {
+		this.number = +prompt("number :");
+		this.value += this.number;
+	}
+}
+
+let accumulator = new Accumulator(1);
+
+accumulator.read();
+accumulator.read();
+
+alert(accumulator.value)
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+function Calculator(str) {
+	
+	
+	this.method = {
+		"+": (number1, number2) => number1 + number2,
+		"-": (number1, number2) => number1 = number2
+	};
+	
+	this.calculate = function(str) {
+		
+		let splitStr = str.split(" "),
+		number1 = +splitStr[0],
+		operator = splitStr[1],
+		number2 = +splitStr[2]
+		
+		if(!(this.method[operator]) || isNaN(number1) || isNaN(number1)) {
+			return NaN;
+		}
+		return this.method[operator](number1, number2);
+	}
+	
+	this.addMethod = function(name, func) {
+		this.method[name] = func;
+	};
+}
+let calc = new Calculator;
+
+alert( calc.calculate("3 + 7") );
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result = powerCalc.calculate("2 ** 3");
+alert( result );
+
+</script>

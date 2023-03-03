@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+function unique(arr) {
+	let set = new Set();
+	let uniqArr = [];
+	
+	for( let item of arr) {
+		set.add(item);
+	}
+	
+	return uniqArr = Array.from(set);
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(values) );
+
+</script>

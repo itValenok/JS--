@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let str = prompt("String:");
+
+checkSpam(str);
+checkSpam('buy ViAgRA now');
+checkSpam('free xxxxx');
+checkSpam("innocent rabbit");
+
+function checkSpam(str) {
+	str  = str.toLowerCase();
+	
+	if( str.indexOf('viagra') != -1 || str.indexOf('xxx') != -1 )
+		alert("true");
+	else
+		alert("false");
+}
+
+</script>

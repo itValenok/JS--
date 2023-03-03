@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+function aclean(arr) {
+	let arrCleaned = [];
+	//alert(arr.split("").sort());
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = arr.length - 1; j > i; j--) {
+			if(arr[i].toLowerCase().split("").sort().join("") == arr[j].toLowerCase().split("").sort().join("")) {
+				arr.splice(j, 1);
+				continue;
+			}
+		}
+	}
+	return arr;
+}
+
+alert( aclean(arr) );
+
+
+</script>

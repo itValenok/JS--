@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+truncate("Вот, что мне хотелось бы сказать на эту тему:", 20);
+
+truncate("Всем привет!", 20);
+
+function truncate(str, maxlength) {
+	if( str.length >= maxlength - 1 ) {
+		alert( str.slice(0, maxlength - 1) + "…" );
+	}else
+		alert( str );
+}
+
+</script>

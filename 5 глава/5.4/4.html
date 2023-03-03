@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+
+getMaxSubSum([-1, -2, -3]);
+getMaxSubSum([-1, 2, 3, -9]);
+getMaxSubSum([2, -1, 2, 3, -9]);
+getMaxSubSum([-1, 2, 3, -9, 11]);
+getMaxSubSum([-2, -1, 1, 2]);
+getMaxSubSum([100, -9, 2, -3, 5]);
+getMaxSubSum([1, 2, 3]);
+
+function getMaxSubSum(arrays) {
+	let sum = 0;
+	let zero = 0;
+	
+	for(let i = 0; i < arrays.length; i++) {
+		sum += arrays[i];
+		if( arrays[i] > 0 ) zero++;
+		}
+	if(zero == 0) {
+		return alert(0);
+	}
+	
+	while( true ) {
+		let sumBeforeMinElement = 0;
+		let sumAfterMinElement = 0;
+		let min = 0;
+		let minElementIndex;
+		
+		for( let i = 0; i < arrays.length; i++) {
+			
+			if( arrays[i] < min) {
+				min = arrays[i];
+				minElementIndex = i;
+				}
+		}
+		
+		for( let j = 0; j < arrays.length; j++) {
+			if( j < minElementIndex ) {
+				sumBeforeMinElement += arrays[j];
+			}
+			else if( j > minElementIndex ) {
+				sumAfterMinElement += arrays[j];
+			}
+		}
+		if( sumAfterMinElement >= sumBeforeMinElement) {
+			if( sumAfterMinElement > sum ) sum = sumAfterMinElement;
+			else {
+			alert(sum);
+			break;
+			}
+			let i = 0;
+			while( i <= minElementIndex ) {
+				arrays.shift();
+				i++;
+			}
+			
+		} else {
+			if( sumBeforeMinElement > sum ) sum = sumBeforeMinElement;
+			else {
+			alert(sum);
+			break;
+			}
+			let i = arrays.length - 1;
+			while( i >= minElementIndex ) {
+				arrays.pop();
+				i--;
+			}
+		}
+	}
+}
+
+</script>
