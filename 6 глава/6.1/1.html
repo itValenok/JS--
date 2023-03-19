@@ -1,0 +1,36 @@
+<script>
+    "use strict";
+
+    function sumToCycle(n) {
+        let sum = 0;
+
+        while (n >= 1) {
+            sum += n;
+            n--;
+        }
+
+        return sum;
+    }
+
+    function sumToRecursy(n) {
+        let sum = 0;
+
+        if (n == 1) {
+            return 1;
+        } else {
+            return n + sumToRecursy(n - 1);
+        }
+    }
+
+    function sumTo(n) {
+        return n * (n + 1) / 2;
+    }
+
+    alert(sumTo(100));
+    let n = +prompt("Число:");
+
+    alert(sumToCycle(n));
+    alert(sumToRecursy(n));
+
+
+</script>

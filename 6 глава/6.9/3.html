@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    function f(x) {
+        alert(x);
+    }
+
+    function debounce(f, ms) {
+
+        let isCooldown = false;
+
+        return function () {
+
+            if (isCooldown) return;
+
+            f.apply(this, arguments);
+            isCooldown = true;
+
+            setTimeout(() => isCooldown = false, ms);
+        };
+    }
+
+    let f1000 = delay(f, 1000);
+    let f1500 = delay(f, 1500);
+
+    f1000("test");
+    f1500("test");
+
+</script>

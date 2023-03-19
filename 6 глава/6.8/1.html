@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    function printNumbers1(from, to) {
+        for (let i = from; i <= to; i++) {
+            setTimeout(() => alert(i), 1000);
+        }
+    }
+
+    function printNumbers2(from, to) {
+        let i = from;
+        let timerId = setInterval(function () {
+            alert(i);
+            if (i == to) {
+                clearInterval(timerId);
+            }
+            i++;
+        }, 1000);
+    }
+
+    printNumbers1(4, 7);
+    printNumbers2(4, 7);
+
+
+</script>
